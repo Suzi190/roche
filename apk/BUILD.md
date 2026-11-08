@@ -34,7 +34,7 @@ d:\roche\apk\
 ├─ capacitor.config.json    ← appId=com.roche.selfbuild, androidScheme=https
 ├─ check-web.mjs            ← 打包前自检（文件存在性 + 全部 JS 语法校验）
 ├─ sync-web.ps1             ← 一键把镜像产物刷进 www（可选 site / readable）
-└─ .github\workflows\build-apk.yml   ← 云端出包流水线
+└─ （流水线在仓库根）.github\workflows\build-apk.yml   ← 云端出包流水线，工作目录 apk/
 ```
 
 ## 关键参数
@@ -67,25 +67,46 @@ d:\roche\apk\
 
 > 注意：改完 `readable` 版后不要在 `www` 里再跑 prettier，避免重复格式化。
 
-## 出包方式一：云端（推荐，本机没装 Android SDK）
+## 出包方式一：云端 GitHub Actions（已配好，推荐）
 
-本机当前状态：**Node 22 ✓ / Java ✗ / Android SDK ✗ / Gradle ✗ / adb ✗**，本机直接编译需要先装
-JDK 21 + Android SDK（约 1.5–2 GB）。云端则零安装：
+仓库：<https://github.com/Suzi190/roche>（公开），流水线文件在**仓库根** `.github/workflows/build-apk.yml`，
+所有 `run` 步骤都通过 `working-directory: apk` 在 `apk/` 里执行。
 
-1. 在 GitHub 建一个私有仓库，把 `d:\roche\apk` 整个推上去（`node_modules`、`android/.gradle` 建议 gitignore）。
-2. 仓库 **Actions** 里手动运行 `build-apk`（也支持 push 到 main 自动跑）。
-3. 跑完在 Artifacts 下载 `roche-debug-apk`，里面就是 `app-debug.apk`，可直接安装。
+1. 推到 `main` 会自动跑；也可以在 [Actions](https://github.com/Suzi190/roche/actions) 里点 `build-apk` → **Run workflow** 手动触发。
+2. 跑完在该次 run 页面底部 **Artifacts** 下载 `roche-debug-apk.zip`，解压得到 `app-debug.apk`，可直接安装。
+3. 流水线做的事：Node 22 + JDK 21 → 用 runner 自带的 Android SDK（补装 `platforms;android-35`、`build-tools;35.0.0`）
+   → `node check-web.mjs` → `npx cap sync android` → `./gradlew assembleDebug` → `aapt2 dump badging` → 上传 APK。
 
-流水线做的事：装 Node 22 + JDK 21 + Android SDK → `npm run check` → `cap sync android`
-→ `gradlew assembleDebug` → 上传 APK。
+本地推一次的传输量约 15 MB（`www` + `android` 源码；`node_modules`、`app/build`、SDK 都不进仓库）。
 
-> 免费额度：私有仓库每月 2000 分钟，一次构建大约 3–5 分钟。
+> 一个已知坑：`check-web.mjs` 以前写死了 `d:\roche\apk\www`，Linux runner 上会 `ENOENT` 直接失败，
+> 现已改为按脚本自身位置（`import.meta.url`）定位，Windows / Linux 都能跑。
 
-## 出包方式二：本机（已备好一键脚本）
+## 出包方式二：本机（环境已装好，可直接出包）
 
-**本机现状（实测）**：Node 22 ✓；Java ✗；Android SDK ✗；Gradle ✗；adb ✗。
-`C:\Program Files\Android\Android Studio\jbr` 和 `%LOCALAPPDATA%\Android\Sdk` 都存在，但**都是装了一半的空壳**
-（`jbr\bin` 只有 DLL 没有 `java.exe`，SDK 只有空的 `.sdk`），不可用。
+本机现在可用：**Node 22 ✓ / JDK 21 ✓ `D:\jdks\temurin-21` / Android SDK ✓ `D:\AndroidSDk`**，
+已实测 `assembleDebug` 成功，产物 `apk\android\app\build\outputs\apk\debug\app-debug.apk`（约 15 MB）。
+
+```powershell
+cd d:\roche\apk
+powershell -ExecutionPolicy Bypass -File .\sync-web.ps1   # 刷新 www 里的 apk-shell.js
+node check-web.mjs                                       # 自检
+npx cap sync android
+$env:JAVA_HOME='D:\jdks\temurin-21'; $env:ANDROID_HOME='D:\AndroidSDk'; $env:ANDROID_SDK_ROOT='D:\AndroidSDk'
+cd android; .\gradlew.bat assembleDebug
+```
+
+原生壳行为（`shell\apk-shell.js`，打包时注入 `www`）：
+
+- 边到边全屏：原生 `MainActivity` 把 `WindowInsets` 归一化后通过 `__rocheApplyInsets` 推给页面，
+  JS 写入 `--roche-inset-*` 并把 CSS 里的 `env(safe-area-inset-*)` 换成真实像素（另有 `#roche-safe-area` 兜底样式）。
+- 返回：页面有返回/关闭控件就点它；App 页只有标题就点标题回桌面；都不行则软重载（数据在 IndexedDB）；
+  已经在桌面层时返回 `false`，原生 `moveTaskToBack` 退到后台而不是退出。
+- 边缘滑动：左/右边缘 30px 内起手、横向位移 > 60px 且大于纵向 → 等同于返回。
+- 导入/导出：拦截 `<a download>`、`blob:`、`data:`、`window.open`、`navigator.share({files})`，
+  页面内用 `FileReader` 解成 base64 → 原生 `saveBase64` 写入 Downloads；`__rocheHandleDownload` 处理 DownloadListener 回传的 blob。
+
+回归测试：`node test-apk-shell.mjs`（Edge CDP + stub 原生桥，12 项全绿）。
 
 因此我为你在 `D:\roche\tools` 下装**免安装便携版**（不写系统目录、不需要管理员）：
 
