@@ -40,10 +40,18 @@ jobs:
           echo "build-tools:"; ls "$SDK_ROOT/build-tools" || true
 
       - name: Install deps
-        run: npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund --include=dev
 
       - name: Verify web assets
-        run: npm run check
+        run: |
+          set -o pipefail
+          if ! out=$(node check-web.mjs 2>&1); then
+            printf '%s\n' "$out"
+            msg=$(printf '%s' "$out" | tail -n 5 | tr '\n' ' ' | cut -c1-900)
+            echo "::error title=check-web failed::$msg"
+            exit 1
+          fi
+          printf '%s\n' "$out"
 
       - name: Capacitor sync
         run: npx cap sync android
