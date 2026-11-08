@@ -1,0 +1,4 @@
+.custom-scrollbar[data-v-aee2d80d]::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

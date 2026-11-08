@@ -1,0 +1,11 @@
+@keyframes slideUp-309ab9ea {
+  0% {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-up[data-v-309ab9ea] {
+  animation: slideUp-309ab9ea 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}

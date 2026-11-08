@@ -1,0 +1,23 @@
+{
+  "appId": "com.roche.selfbuild",
+  "appName": "Roche",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "androidScheme": "https",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
+    "backgroundColor": "#000000"
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true,
+      "backgroundColor": "#000000"
+    }
+  }
+}
+

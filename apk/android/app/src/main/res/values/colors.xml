@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AppCompat 基础色（原先由库默认值提供，这里显式声明，避免换主题后缺失） -->
+    <color name="colorPrimary">#0A0A0A</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#7C5CFF</color>
+
+    <!-- 窗口/闪屏底色：和 Web 端 index.html 的 #000 一致，避免启动时白闪 -->
+    <color name="rocheBlack">#000000</color>
+</resources>

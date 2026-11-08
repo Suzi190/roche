@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>角色卡导入 · 本地预览</title>
+  <link rel="icon" href="data:," />
+
+  <!-- 用的是镜像里真实的样式表，保证配色/尺寸和应用内一致 -->
+  <link rel="stylesheet" href="./assets/index-DKqPGtwn.css" />
+
+  <style>
+    /* 图标字体：本地内置一份 Material Symbols Outlined（原站是从 Google Fonts 拉的） */
+    @font-face {
+      font-family: 'Material Symbols Outlined';
+      font-style: normal;
+      font-weight: 100 700;
+      font-display: block;
+      src: url('./assets/_cc-demo-material-symbols.woff2') format('woff2');
+    }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f4f5;
+    }
+
+    .demo-banner {
+      max-width: 430px;
+      margin: 18px auto 0;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #111;
+      color: #fff;
+      font: 12px/1.7 ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    .demo-banner b {
+      color: #7dd3fc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-banner">
+    <b>本地预览页</b>：下方是 Following 页头的<b>真实结构</b>（类名取自应用产物），
+    导入按钮已由 <code>charcard-import.js</code> 注入到 <code>person_add</code>（创建角色）的右边。
+    点它可以看到导入面板。<br />
+    下面的联系人列表由页面里的 <code>window.__CC_STORE__</code> 渲染，和真实应用一样：
+    导入完成后脚本会把新角色合并进这个 store，列表<b>立刻更新，不需要重启</b>。
+  </div>
+
+  <div class="mx-auto max-w-[430px] my-4 rounded-2xl overflow-hidden shadow-xl bg-white"
+    style="height: 760px;">
+    <div class="h-full flex flex-col bg-white text-black font-sans">
+
+      <!-- === 真实 Following 页头（与线上 Following-De-2vWMN.js 渲染出的 DOM 一致：
+           person_add 直接是 justify-between 页头的子节点，没有 ml-4 包裹组）=== -->
+      <div
+        class="flex items-center justify-between px-6 pt-[calc(20px_+_env(safe-area-inset-top))] pb-3 sticky top-0 bg-white/95 backdrop-blur-md z-10 border-b border-gray-50">
+        <button class="flex items-center justify-center size-10 -ml-2 hover:bg-gray-100 rounded-full transition-colors">
+          <span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+        </button>
+        <span class="text-[13px] font-bold uppercase tracking-[0.25em]">Following</span>
+        <button class="flex items-center justify-center size-10 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
+          title="添加角色（应用原有按钮）">
+          <span class="material-symbols-outlined text-[18px]">person_add</span>
+        </button>
+      </div>
+      <!-- === 页头结束 === -->
+
+      <div class="px-6 py-4">
+        <div class="relative">
+          <span
+            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-zinc-400 text-[20px]">search</span>
+          <input readonly
+            class="w-full bg-zinc-50 border border-gray-100 rounded-lg py-2.5 pl-10 pr-4 text-sm font-light placeholder-zinc-400 focus:outline-none focus:border-black/10 transition-colors"
+            placeholder="Search connections..." />
+        </div>
+      </div>
+
+      <div id="demo-list" class="flex-1 overflow-y-auto w-full px-6 pb-20"></div>
+    </div>
+  </div>
+
+  <script>
+    /* 模拟应用里的全局 reactive store：charcard-import.js 会认领它，把导入的角色并进去。
+       真实应用里是 index-*.js 导出的 Vue reactive 对象，列表由它渲染；
+       这里用一段极简渲染 + resize 监听来模拟同样的「改了数据列表就更新」。 */
+    window.__CC_STORE__ = {
+      contacts: [
+        { id: 'demo_1', name: 'Seraphina', handle: 'seraphina' },
+        { id: 'demo_2', name: '林见夏', handle: 'linjianxia' }
+      ],
+      personas: [],
+      conversations: []
+    };
+
+    function ccDemoRender() {
+      var box = document.getElementById('demo-list');
+      if (!box) return;
+      box.innerHTML = '';
+      window.__CC_STORE__.contacts.forEach(function (c) {
+        var row = document.createElement('div');
+        row.className = 'flex items-center gap-3 py-3 border-b border-gray-50';
+        row.setAttribute('data-demo-contact', c && c.id ? c.id : '');
+        row.innerHTML =
+          '<div class="size-11 rounded-full bg-zinc-100 flex items-center justify-center">' +
+          '<span class="material-symbols-outlined text-zinc-400 text-[20px]">person</span></div>' +
+          '<div class="flex flex-col min-w-0">' +
+          '<span class="text-[14px] font-bold tracking-tight truncate"></span>' +
+          '<span class="text-[11px] text-zinc-500 font-light truncate mt-0.5"></span></div>';
+        var spans = row.querySelectorAll('span');
+        spans[1].textContent = (c && c.name) || '';
+        spans[2].textContent = c && c.handle ? '@' + c.handle : '';
+        box.appendChild(row);
+      });
+    }
+
+    window.addEventListener('resize', ccDemoRender);
+    document.addEventListener('DOMContentLoaded', ccDemoRender);
+  </script>
+  <script src="./charcard-import.js"></script>
+</body>
+
+</html>

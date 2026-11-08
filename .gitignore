@@ -1,0 +1,32 @@
+# --- 构建产物（Capacitor / Gradle / npm）---
+node_modules/
+apk/android/.gradle/
+apk/android/.idea/
+apk/android/build/
+apk/android/app/build/
+apk/android/app/src/main/assets/public/
+apk/android/capacitor-cordova-android-plugins/build/
+apk/android/local.properties
+apk/android/app/google-services.json
+*.iml
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# --- 体积过大、不适合进仓库的工具包 ---
+tools/*.zip
+tools/*.tar.gz
+
+# --- 本地临时探针 / 测试输出 ---
+_*.txt
+_*.json
+_*.log
+_*.mjs
+_*.png
+_shell_*.json
+_edge_*/
+_pw_*/
+.plugin_spec/
+*.log
+

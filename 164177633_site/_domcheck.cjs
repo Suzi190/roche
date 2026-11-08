@@ -1,0 +1,12 @@
+const fs = require('fs');
+const file = process.argv[2] || '_dom2.html';
+const t = fs.readFileSync(file, 'utf8');
+const i = t.indexOf('id="app"');
+console.log('size=' + t.length);
+console.log('person_add=' + t.includes('person_add'));
+console.log('Following=' + t.includes('Following'));
+console.log('cc-btn=' + t.includes('cc-btn'));
+console.log('data-cc-import=' + t.includes('data-cc-import'));
+console.log('splash=' + t.includes('boot-splash'));
+console.log('--- app start ---');
+console.log(t.slice(Math.max(0, i - 60), Math.max(0, i) + 700).replace(/\s+/g, ' '));

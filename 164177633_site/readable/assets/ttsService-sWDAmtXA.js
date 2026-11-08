@@ -1,0 +1,453 @@
+function W() {
+  const o = [
+    "hGX8W7ZcVJS",
+    "adNcMZC",
+    "WQ4WlSo2",
+    "W4RdGaWyW4XYoq9UWQFcSfTZ",
+    "WPj6rwqPua",
+    "WR46oSoJW708EG",
+    "d8okWQa",
+    "o8oTnItdUHL9WQ5Nd37dICoeW57cTMVcVSoUhmkHuSo0",
+    "bLGaceeF",
+    "WOz0xxyL",
+    "yCkTnZar",
+    "g8ogjxCYpmkUWPibA1NcLa",
+    "gqT3W6i",
+    "imk6wurYkW",
+    "cX4+W6xcRG",
+    "mSoKptxdQX8",
+    "huqDW7dcV8krtSkXumo3W6b1mCkPAG",
+    "lCoXnJFdVb8CW70RrbZdLmou",
+    "yCkPidWBBIvpca",
+    "tmkKWPKotbldTYVdHN9/W6PmCW",
+    "bJtcLJTj",
+    "b8owW7zfySk/z8k7ySoaWRGtW6NdQxC",
+    "xtryuWjwWPz8W5RcTCkZWPOYW4xcRSkB",
+    "EuXo",
+    "WOXlW4a0hCo3WOddLsS",
+    "WQdcG8og",
+    "WRJdVI7dR+ISQ+AWV+wLPUI2Q8ksW5K",
+    "WPHxW5ZcHSoLW505z8kTfq",
+    "b0xcHSkdW6hdJCkqW6nkWRnfud3cHSobW6yqW7ZcVCk0WPH3",
+    "W4BdVH7cVmkZg8oR",
+    "obCup8kTp8k9yvhcQb1R",
+    "W4fNmmoEm8oUW6NdTIyC",
+    "lSoKishdTGrf",
+    "WQ/dGHtcOCk5dJlcOSoXWOWf",
+    "esFcIc9vrCo2AmkBWPn/",
+    "WRxdQSkwsgdcImoOprrNb8okWRS",
+    "WRfVW7VcQmkwW6NcRq",
+    "q8krFIj0BmkmWOuKANVcThm",
+    "nI1kW5ZcL2LupSoIW5Pqx8k6W5OsWQmEW6RdG8o8WQ/dQCoFsCoLp8kMmCo1W4/cKd3dKq",
+    "WPNcVSo7D+wWKoACVEw9TowrHEAlVEACVUMgOoE/LEoaQW",
+    "fmovW7PqySkytW",
+    "ph40BCoto8o0",
+    "gI0SctuyWQW1i8kvfZ9X",
+    "eXa8W7u",
+    "W5hdTWVcPSk3fSocmSkcW53cJNKBW6NdUJv0zCkC",
+    "W6hdKvyRWP0IkeSXW5JdSqW5FfPaxSodp8kRkCkyas/dICoIW5xcJa",
+    "ywddUmoe",
+    "A2G0W5uxWP4TWRFdK3Knumkm",
+    "b8kAAXbZpCo6ksuHxWldQCkfoSoJy2BdU8k6WPVcIftdT8oNECkgb8kKW5K/WOldJdBcHcNcVZzdFYD3dfnFWQW",
+    "daX6W6BcPq15jCoI",
+    "WQxdRmkkrxe",
+    "WR8TW4RcK8kVW6lcLSkeWQNdKSoUWRX0n8oJ",
+    "DctcV8kGyJldPg9SW6ddV8oTW6xdR8kNW6pcSaX8",
+    "WPxcNtC",
+    "W6TfB8oQfHJcM1XxmmovcuvRtmonWQytl8kVcmoAWOlcTxu",
+    "W4jRimosemkKW6RdOtCt",
+    "gI0OddCyW6uVlSkzcd8",
+    "u8k5W6KKWO0ejG",
+    "DZRcTmkIW4NdMGf5cColW6DbWR3cLCofWPi",
+    "WR0TW5xcJ8kWW7tcO8kKWQNdK8oeWR9Ik8oJ",
+    "v0TtW65hW7eZ",
+    "yCotB8oq",
+    "E01FW7jqW60K",
+    "WPRdIXhcUSk5",
+    "n8k3kSofWQbaWRC+WQJcL8ohgNafcq",
+    "fLVcISky",
+    "WQpdJNpcGG1O",
+    "mCoVnJZdUXjv",
+    "WQ4hW4RdNwxdHCor",
+    "5PYc6l+l5zUd6z+j6Aku5PwD5O+YwvBcNGP1vqWWWQVcQCkAWOD/k2xcLmosW7dcHwPKh8ogWPCWi8oSlZtcJSo9tCkcWOGvW4hcI8og",
+    "WQKTomoGW64",
+    "w8kvAde",
+    "w8kUWO8C",
+    "eHe3W77cR3VdUq",
+    "lCo1mIBdQGrUWQj2gW",
+    "W6rdDmoVfwVdKa",
+    "WORcLZ7dHCoCWOhcNr3dMIW",
+    "gbm3W6BcRNddSxzZFW",
+    "WOb0rhaL",
+    "k8krW6XUWOldLei",
+    "WQaHW4NcLCk0W6BcR8kKWONdSW",
+    "tZLpsW",
+    "W43dS8kvo8kg",
+    "n8kHvvfUnG",
+    "eCotW6Lw",
+    "WO7dIW7cQSkddZldVCoy",
+    "A8o+dWLQl8oTkeWe",
+    "EfboBG",
+    "j8koqmo1cCkgW5pdIa",
+    "5Pga5Pwr6z2q6AcI5PE25y2N55AR5B2v5BMc",
+    "b1VcKCkAW7y",
+    "umkiWQylm8oGhmkaC8oYWO84W6y",
+    "qvtcUx7cHXdcHq",
+    "gbm3W6BcRNddKxzZF8kjWQ8RcaW",
+    "nhS/CSoBnmoGvSkBWOC",
+    "BM1BtxaavSoG",
+    "hCo5W4zBfudcIaVdTMH/W6LT",
+    "WP7dP1WPWQWFqG",
+    "WRFdRCkxqhS",
+    "iCkRsfXMo8oN",
+    "BgldSSoulCkBqG",
+    "txn4tgbdW5acfmkdnJXzedJcO8k0W5pcLw8",
+    "W5FdUHRcS8k6",
+    "ASkCDtnKy8kNWOezEJtcHeldO2NORkZMSQtLP7hOTA3cMCoO",
+    "duadW7RcLSkgASk2va",
+    "WOVcLZ3dJSopWPy",
+    "dXOIW7ZcQN3dUa",
+    "DctcV8kGyMxdVuq3WQBcR8khW6tdSmk3W7BcMGbU",
+    "E1flza",
+    "umoACSosiSk8W6xdVCkDW5evWP/cGYNdKbxdOeNcQ+E8M+wNP+ocGa",
+    "WPRcGdxdGmonWPBcNb7dNsZdRSkfW5j3WRa",
+    "Fffb",
+    "W5JcNeJdVCoVtbldVmosWPSTpq",
+    "k8kxW6zIWOm",
+    "sK1fzCoXESkL",
+    "kCkgW6mKWRWUcq",
+    "b8owW7zfySk/z8k7ySoaWQyiW7tdOh4",
+    "WPBdM3VcMH1/W5VdP8oyW4fnW5JdSSocW7dcTfRcQL3dLqTGW7uhCSksCLK9WOHbfCozW5uJW6/cP0K1WOJcKCoCW4JcKCkYW5pdR8kEW43dLv9tW5vxyCooWOpdSq",
+    "WPn5txmLumkVrGddQCkwWRRcUSoXBCk7gSkHe8k1vSo3",
+    "pgDPw8kkBSk9b8ojWQVcHSkLWRO",
+    "WR7dRmkhwwFdL8kcFHb6c8kkWQlcLmoYuSo+WPZcImoJl1mXha",
+    "CYBcOCk4W4xdLYXSaSoxW4WaWRpcLSofWPvveq",
+    "yICZxCorkCo7Fq",
+    "W6FcR8ocgs3dMCkzjsTyfSotWOa",
+    "W58mWPfLrSkcW5BdUZKAWPSkW6e",
+    "W5RdOmkinq",
+    "BwpdOa",
+    "WRSblmkJcfxdMWz/da",
+    "sdLivGi",
+    "q8kUWPKpur0",
+    "tK87W4NcPg3dQL0",
+    "rSkjaxxNLARMIjNPLzxOR4zloW",
+    "acFcLtHfy8oMFa",
+    "W653kSosmSoQW7/cSrmKWOXDW7lcVvpdS+E8OowNQooaLa",
+    "lSkDW7O",
+    "DmoaW5vwWQhdOuaf",
+    "W5xdLu8RWPKLBq",
+    "W5niWP7dMCo9WO4H",
+    "Dw3dU8otoG",
+    "W7uAW7pdRG",
+    "nSk8sL91",
+    "mMBcSmkH",
+    "hSkAW7LNWRGOcmo6W4SexmoXAwVdKeC",
+    "jmkMoIdcVW5AymkDW5ZcNmoO",
+    "iuhcISkBW6hdKmk5",
+    "dCouW7zDy8k0tW",
+    "5PAT5RcH6isV5yMJ5Pky5PASja",
+    "W4FdRXZcUCk8h8oNnCkz",
+    "DmodC8onkmo9W4tdRmkAW4u",
+    "WQNcI8oCnG",
+    "WRxdTZHz",
+    "WRRdIx3cMa",
+    "WR44W4lcMCk9",
+    "gsBcVcDcBSo3AW",
+    "BCk0oSohWRvBWQ8aWQZcIW",
+    "rxVdUcCsW6rQvx90W5DPWQxcUmoT",
+    "W4BdGe8IWPyIs1C3WPtdPq",
+    "W7iAW7K",
+    "WR90W7RcS8kl",
+    "C35m",
+    "CCoZF3pdLuPpv8kf",
+    "imk6wurYk8oDpMOSsq",
+    "WOBcQvVdPSoGtCo3h8k4W4FcSgC",
+    "WOy+oSoUW7i6BmkT",
+    "yNZdVSoToSkn",
+    "j3y2CCoB",
+    "j8kiW7jRWOBdLLSLrxJcPLGco8kpiq",
+    "gbeZW7lcP3VdUq",
+    "WRGbW4JdNw/dGCoA",
+    "WRK6W47cKq",
+    "WQ0Vi8oeW7KM",
+    "bSkBWRFcRLtdVa",
+    "eSotW6DqBW",
+  ];
+  return (W = function () {
+    return o;
+  })();
+}
+const o = n;
+!(function () {
+  const o = n,
+    t = W();
+  for (;;)
+    try {
+      if (
+        252076 ===
+        (-parseInt(o(535, "RA2]")) / 1) * (parseInt(o(537, "[yu0")) / 2) +
+          parseInt(o(460, "$1FM")) / 3 +
+          parseInt(o(496, "[9vF")) / 4 +
+          (-parseInt(o(438, "AY7O")) / 5) * (parseInt(o(398, "wCOT")) / 6) +
+          parseInt(o(540, "pdt$")) / 7 +
+          -parseInt(o(419, "Js2e")) / 8 +
+          (-parseInt(o(546, "^acn")) / 9) * (parseInt(o(491, "YVai")) / 10)
+      )
+        break;
+      t.push(t.shift());
+    } catch (c) {
+      t.push(t.shift());
+    }
+})();
+import { b as t, a8 as c, a9 as d } from "./db-layer-CDcFHN6B.js";
+function n(o, t) {
+  o -= 377;
+  const c = W();
+  let d = c[o];
+  if (void 0 === n.svKHLZ) {
+    const W = function (W, o) {
+      let t,
+        c,
+        d = [],
+        n = 0,
+        k = "";
+      for (
+        W = (function (W) {
+          let o = "",
+            t = "";
+          for (
+            let c, d, n = 0, k = 0;
+            (d = W.charAt(k++));
+            ~d && ((c = n % 4 ? 64 * c + d : d), n++ % 4)
+              ? (o += String.fromCharCode(255 & (c >> ((-2 * n) & 6))))
+              : 0
+          )
+            d = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=".indexOf(d);
+          for (let c = 0, d = o.length; c < d; c++)
+            t += "%" + ("00" + o.charCodeAt(c).toString(16)).slice(-2);
+          return decodeURIComponent(t);
+        })(W),
+          c = 0;
+        c < 256;
+        c++
+      )
+        d[c] = c;
+      for (c = 0; c < 256; c++)
+        ((n = (n + d[c] + o.charCodeAt(c % o.length)) % 256), (t = d[c]), (d[c] = d[n]), (d[n] = t));
+      ((c = 0), (n = 0));
+      for (let e = 0; e < W.length; e++)
+        ((c = (c + 1) % 256),
+          (n = (n + d[c]) % 256),
+          (t = d[c]),
+          (d[c] = d[n]),
+          (d[n] = t),
+          (k += String.fromCharCode(W.charCodeAt(e) ^ d[(d[c] + d[n]) % 256])));
+      return k;
+    };
+    ((n.GtkOAs = W), (n.qAHJMd = {}), (n.svKHLZ = !0));
+  }
+  const k = o + c[0],
+    e = n.qAHJMd[k];
+  return (e ? (d = e) : (void 0 === n.zigoXC && (n.zigoXC = !0), (d = n.GtkOAs(d, t)), (n.qAHJMd[k] = d)), d);
+}
+import { _ as k } from "./ai-core-BB-N4fjb.js";
+import { a as e } from "./elevenLabsLanguages-Se8jkJbo.js";
+import { r } from "./vue-vendor--2_S-kdx.js";
+const a = {
+    "zh-CN": o(517, "VWMO"),
+    "zh-TW": o(509, "]mpx"),
+    "zh-HK": o(482, "ZjE6"),
+    "en-US": o(390, "ZB^b"),
+    "ja-JP": o(439, "wzn^"),
+    "ko-KR": o(447, "qW5z"),
+  },
+  s = /\u300e\u7ffb\u8bd1[\uff1a:][\s\S]*?\u300f/g,
+  m = (W, t, c, d) => {
+    const n = o,
+      k = Number(W);
+    return Number[n(429, "Yf90")](k) ? Math[n(474, "$ROf")](c, Math[n(435, "V[Ba")](t, k)) : d;
+  },
+  C = async (W, t, c, d, n) => {
+    const e = o;
+    if (!n[e(440, "am#[")]) throw new Error(e(409, "Jywo"));
+    const r = a[c] || c || e(391, "jmpT"),
+      s = {
+        model: n[e(389, "Ayb7")] || e(466, "sFqv"),
+        text: W,
+        stream: !1,
+        output_format: e(410, "Ayb7"),
+        voice_setting: {
+          voice_id: t,
+          speed: d[e(459, "^@DH")] ?? 1,
+          vol: d[e(472, "ZB^b")] ?? 1,
+          pitch: d[e(448, "pdt$")] ?? 0,
+        },
+        pronunciation_dict: { tone: [] },
+        audio_setting: {
+          sample_rate: 32e3,
+          bitrate: 128e3,
+          format: e(455, "pdt$"),
+          channel: 1,
+        },
+        language_boost: r,
+      },
+      m = await k(
+        ((W) => {
+          const t = o,
+            c = W[t(453, "Qut[")] ? W[t(532, "RA2]")][t(454, "wzn^")](/\/+$/, "") : t(396, "MyVO"),
+            d = String(W[t(524, "qAm6")] || "")[t(445, "YtBp")]();
+          return d ? c + t(383, "RlBr") + encodeURIComponent(d) : c + t(476, "7Rk[");
+        })(n),
+        {
+          method: e(417, "1*o7"),
+          headers: {
+            Authorization: e(541, "%S%o") + n[e(446, "wzn^")][e(461, "#PUw")](),
+            "Content-Type": e(507, "^Lti"),
+          },
+          body: JSON[e(467, "^@DH")](s),
+        },
+      );
+    if (!m.ok) {
+      const W = await m[e(510, "[yu0")]();
+      throw new Error(e(475, "ZjE6") + m[e(462, "RA2]")] + " " + W);
+    }
+    const C = await m[e(427, "*YNH")]();
+    if (C[e(380, "y[ln")] && 0 !== C[e(436, "Js2e")][e(437, "RA2]")])
+      throw new Error(e(407, "^@DH") + C[e(534, "ZjE6")][e(523, "sFqv")]);
+    const S = C[e(425, "$ROf")]?.[e(547, "MyVO")];
+    if (!S) throw new Error(e(518, "YVai"));
+    const i = ((W) => {
+      const t = o;
+      if (!W) return new Uint8Array(0);
+      W = W[t(478, "AY7O")](/\s+/g, "");
+      const c = new Uint8Array(W[t(464, "sFqv")] / 2);
+      for (let o = 0; o < W[t(405, "ul%R")]; o += 2) c[o / 2] = parseInt(W[t(449, "#PUw")](o, 2), 16);
+      return c;
+    })(S);
+    return new Blob([i], { type: e(504, "Jywo") });
+  },
+  S = async (W, n, r = o(420, "1*o7"), a = {}) => {
+    const S = o,
+      i = W.id,
+      u = String(W[S(521, "ul%R")] || ""),
+      R = ((W = "") => {
+        const t = o;
+        return String(W || "")
+          [t(382, "qcX*")](s, "")
+          [t(548, "RA2]")](/\s{2,}/g, " ")
+          [t(415, "c&mF")]();
+      })(u),
+      f = W[S(525, "Avsb")] || S(444, "VWMO"),
+      l = /\u300e\u7ffb\u8bd1[\uff1a:][\s\S]*?\u300f/[S(426, "Lu6*")](u);
+    if (!R) throw new Error(S(497, "RA2]"));
+    const p = await t(),
+      O = a[S(468, "ul%R")] || p?.[S(529, "YtBp")],
+      y = ((w = O), w?.[o(408, "Yf90")] === o(430, "&y4$") ? o(543, "wCOT") : o(528, "Ayb7"));
+    var w;
+    if (!O || !O[S(443, "qcX*")]) throw new Error(S(488, "$ROf"));
+    if (!l)
+      try {
+        const W = await c(i),
+          o = W?.[S(544, "V[Ba")] || S(490, "wCOT");
+        if (W && W[S(498, "#PUw")] && W[S(489, "pdt$")] === n && o === y) {
+          const o = new Blob([W[S(473, "QB$f")]], { type: S(424, "[yu0") });
+          return URL[S(431, "*Mro")](o);
+        }
+      } catch (V) {}
+    const P =
+        y === S(526, "qcX*")
+          ? await (async (W, t, c, d, n) => {
+              const r = o,
+                a = String(n[r(471, "xP5Z")] || "")[r(514, "1*o7")]();
+              if (!a) throw new Error(r(385, "[yu0"));
+              const s = String(n[r(397, "^Lti")] || r(503, "qAm6"))
+                  [r(384, "ZB^b")]()
+                  [r(412, "^acn")](/\/+$/, ""),
+                C = String(n[r(456, "sFqv")] || r(395, "wCOT"))[r(401, "^84#")]() || r(452, "^acn"),
+                S = s + r(501, "RlBr") + encodeURIComponent(t) + r(513, "&y4$") + encodeURIComponent(C),
+                i = e(c, n[r(542, "qcX*")]),
+                u = {
+                  text: W,
+                  model_id: n[r(470, "pdt$")] || r(394, "Qut["),
+                  voice_settings: {
+                    stability: m(d[r(493, "AY7O")], 0, 1, 0.5),
+                    similarity_boost: m(d[r(377, "YVai")], 0, 1, 0.75),
+                    style: m(d[r(392, "pdt$")], 0, 1, 0),
+                    use_speaker_boost: !1 !== d[r(477, "1*o7")],
+                    speed: m(d[r(428, "YtBp")], 0.7, 1.2, 1),
+                  },
+                };
+              i && (u[r(486, "$1FM")] = i);
+              const R = await k(S, {
+                method: r(536, "YVai"),
+                headers: { "xi-api-key": a, "Content-Type": r(442, "Ayb7") },
+                body: JSON[r(423, "AY7O")](u),
+              });
+              if (!R.ok) {
+                const W = await R[r(520, "$1FM")]();
+                throw new Error(r(379, "$1FM") + R[r(515, "*YNH")] + " " + W);
+              }
+              return R[r(495, "am#[")]();
+            })(R, n, r, a, O)
+          : await C(R, n, r, a, O),
+      h = await P[S(483, "Yf90")]();
+    return (
+      (a[S(481, "sFqv")] ?? !1 !== O[S(508, "YtBp")]) &&
+        d({
+          id: i,
+          audioData: h,
+          timestamp: Date[S(402, "am#[")](),
+          text: R,
+          senderName: f,
+          voiceId: n,
+          provider: y,
+          size: P[S(533, "pdt$")] || h[S(480, "Jywo")],
+        })[S(378, "AY7O")]((W) => {}),
+      URL[S(386, "Avsb")](P)
+    );
+  };
+let i = null;
+const u = r(null),
+  R = (W, t, c) => {
+    const d = o;
+    i &&
+      ((i[d(522, "qcX*")] = null),
+      (i[d(511, "]mpx")] = null),
+      i[d(404, "xP5Z")](),
+      i[d(500, "YtBp")](d(387, "ZB^b")),
+      i[d(381, "Avsb")](),
+      (i = null));
+    const n = document[d(484, "MyVO")](d(434, "wVpP"));
+    ((n.id = d(418, "jmpT")),
+      (n[d(433, "c&mF")] = W),
+      (n[d(499, "MyVO")][d(413, "7Rk[")] = d(492, "qcX*")),
+      (n[d(516, "sFqv")] = () => {
+        const W = d;
+        (c && c(), (u[W(441, "wCOT")] = null));
+      }),
+      (n[d(549, "am#[")] = () => {
+        const W = d;
+        (c && c(), (u[W(469, "Yf90")] = null));
+      }),
+      document[d(451, "wzn^")][d(432, "^acn")](n),
+      n[d(450, "Yf90")]()[d(531, "^84#")]((W) => {
+        const o = d;
+        (c && c(), (u[o(463, "qcX*")] = null));
+      }),
+      (i = n),
+      (u[d(527, "Qut[")] = t));
+  },
+  f = () => {
+    const W = o;
+    (i &&
+      ((i[W(421, "pdt$")] = null),
+      (i[W(485, "wVpP")] = null),
+      i[W(458, "Qut[")](),
+      i[W(465, "y[ln")](W(433, "c&mF")),
+      i[W(457, "5fA7")](),
+      (i = null)),
+      (u[W(414, "am#[")] = null));
+  },
+  l = (W) => u[o(512, "ZjE6")] === W;
+export { S as f, l as i, R as p, f as s };

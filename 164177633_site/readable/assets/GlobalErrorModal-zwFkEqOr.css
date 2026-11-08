@@ -1,0 +1,21 @@
+.fade-in-scale-enter-active[data-v-2a7a8513],
+.fade-in-scale-leave-active[data-v-2a7a8513] {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-scale-enter-from[data-v-2a7a8513],
+.fade-in-scale-leave-to[data-v-2a7a8513] {
+  opacity: 0;
+}
+.fade-in-scale-enter-from .relative[data-v-2a7a8513],
+.fade-in-scale-leave-to .relative[data-v-2a7a8513] {
+  transform: scale(0.9) translateY(10px);
+}
+.no-scrollbar[data-v-2a7a8513]::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar[data-v-2a7a8513] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

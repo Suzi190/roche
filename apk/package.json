@@ -1,0 +1,23 @@
+{
+  "name": "roche-shell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Capacitor shell for the mirrored Roche web build",
+  "scripts": {
+    "sync": "cap sync android",
+    "copy": "cap copy android",
+    "open": "cap open android",
+    "check": "node check-web.mjs",
+    "apk:debug": "npm run check && cap sync android && cd android && gradlew.bat assembleDebug",
+    "apk:release": "npm run check && cap sync android && cd android && gradlew.bat assembleRelease"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@capacitor/android": "^7.6.10",
+    "@capacitor/cli": "^7.6.10",
+    "@capacitor/core": "^7.6.10"
+  },
+  "devDependencies": {
+    "acorn": "^8.19.0"
+  }
+}
