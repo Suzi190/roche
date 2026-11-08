@@ -1,8 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import * as acorn from 'acorn';
 
-const WWW = 'd:\\roche\\apk\\www';
+/* 用脚本自身位置定位，本地（Windows）和 CI（Linux）都能跑 */
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const WWW = path.join(HERE, 'www');
 const problems = [];
 
 const indexHtml = path.join(WWW, 'index.html');
